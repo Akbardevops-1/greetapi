@@ -4,7 +4,7 @@ import json
 from flask import Flask, jsonify
 app = Flask(__name__)
 @app.route('/name')
-def index():
+def hello_world():
     return "<p>Hello, World!</p>
 
     return jsonify({'name': 'akbar',
