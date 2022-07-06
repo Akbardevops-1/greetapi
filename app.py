@@ -5,6 +5,8 @@ from flask import Flask, jsonify
 app = Flask(__name__)
 @app.route('/name')
 def index():
+    return "<p>Hello, World!</p>
+
     return jsonify({'name': 'akbar',
                     'email': 'akbar@outlook.com'})
 if __name__ == '__main__':
