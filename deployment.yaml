@@ -1,11 +1,21 @@
 apiVersion: v1
-kind: Service
+kind: Deployment
 metadata:
-  name: my-service
-spec:
-  selector:
+  name: python
+  labels:
     app: python
-  ports:
-    - protocol: TCP
-      port: 8080
-      targetPort: 8080
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: python
+  template:
+    metadata:
+      labels:
+        app: python
+    spec:
+      containers:
+      - name: python
+        image: akbar10225/test:v3
+        ports:
+        - containerPort: 8080
